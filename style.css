@@ -52,3 +52,30 @@ header, footer {
   background: #34d399;
   color: #000;
 }
+/* Contact form layout */
+form[name="contact"]{
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+}
+form[name="contact"] input,
+form[name="contact"] textarea{
+  width: 100%;
+  box-sizing: border-box;
+  padding: .75rem;
+  border: 1px solid #2a2f3a;
+  border-radius: 6px;
+  background: #0e1117;
+  color: #e7e9ee;
+}
+form[name="contact"] textarea{ min-height: 120px; }
+
+/* On larger screens: two fields on first row, textarea full width */
+@media (min-width: 768px){
+  form[name="contact"]{ grid-template-columns: 1fr 1fr; }
+  form[name="contact"] textarea{ grid-column: 1 / -1; }
+  form[name="contact"] button{ width: fit-content; }
+}
+
